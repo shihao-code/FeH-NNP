@@ -1,0 +1,26 @@
+Highly efficient and transferable interatomic potentials for α-iron and α-iron/hydrogen binary systems using deep neural networks
+
+Nov21.2023
+
+There are 3 folders:
+
+<Input_file_of_construction>
+
+01data_deepmd_xs_06x.zip: input training database of DeepMD-kit V2.1.5.
+Uncompress (unzip) firstly before using it.
+input.json: input parameter files of DeepMD-kit V2.1.5
+
+<NNP_file>
+
+FeH.pb: NNP file.
+
+<Lammps_input_files>
+
+0run: the script file to run LAMMPS
+rlx_FeH.in: input file of LAMMPS (structure relaxation)
+BCC-Fe.lmp: structure file of LAMMPS (BCC-iron)
+
+The NNP can be used like:
+
+pair_style deepmd FeH.pb
+pair_coeff * *
